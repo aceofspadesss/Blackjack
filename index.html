@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blackjack</title>
+    <link rel="stylesheet" href="./main.css">
+</head>
+<body>
+    <div class="container">
+        <div class="main-menu">
+            <button class="new-game">NEW GAME</button>
+        </div>
+        <div class="bet">
+            <p class="bet-info">Place Your Bets</p>
+            <div class="chip500">
+                <img class="chip-img" src="images/chip.png">
+                <p class="chip-value">500</p>
+            </div>
+            <div class="chip100">
+                <img class="chip-img" src="images/chip.png">
+                <p class="chip-value">100</p>
+            </div>
+            <div class="chip10">
+                <img class="chip-img" src="images/chip.png">
+                <p class="chip-value">10</p>
+            </div>
+            <div class="chip1">
+                <img class="chip-img" src="images/chip.png">
+                <p class="chip-value">1</p>
+            </div>
+            <p class="player-money"></p>
+            <p class="bet-value"></p>
+            <button class="deal">Deal</button>
+        </div>
+        <div class="game-window">
+            <div class="player-hand"></div>
+            <div class="house-hand"></div>
+            <div class="player-points">0</div>
+            <div class="house-points">0</div>
+            <button class="hit">Hit</button>
+            <button class="stand">Stand</button>
+        </div>
+        <div class="victory">YOU WIN</div>
+        <div class="loss">YOU LOSE</div>
+        <div class="draw">DRAW</div>
+    </div>
+    
+    <script
+        src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+        crossorigin="anonymous"></script>
+    <script src="index.js"></script>
+</body>
+</html>
