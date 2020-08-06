@@ -1,0 +1,20 @@
+@keyframes slide-right {
+    0% {margin-right: 200%;}
+    100% {margin-right: 0;}
+}
+@keyframes slide-left {
+    0% {margin-left: 200%;}
+    100% {margin-left: 0;}
+}
+@keyframes fade-out{
+    0% {opacity: 0;}
+    100% {opacity: 100%}
+}
+@keyframes going-down{
+    from {top: -50%}
+    to {top: 120%}
+    100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } 
+}
+@keyframes spin { 
+    100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } 
+}

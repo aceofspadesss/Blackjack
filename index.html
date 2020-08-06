@@ -4,11 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blackjack</title>
+    <link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./main.css">
+    <link rel="stylesheet" href="./animation.css">
 </head>
 <body>
     <div class="container">
         <div class="main-menu">
+            <div class="main-bg"></div>
+            <p class="title">BLACKJACK</p>
+            <span class="btn-effect-left"></span>
+            <span class="btn-effect-right"></span>
             <button class="new-game">NEW GAME</button>
         </div>
         <div class="bet">
@@ -41,15 +47,16 @@
             <button class="hit">Hit</button>
             <button class="stand">Stand</button>
         </div>
-        <div class="victory">YOU WIN</div>
+        <!-- <div class="victory">YOU WIN</div>
         <div class="loss">YOU LOSE</div>
-        <div class="draw">DRAW</div>
+        <div class="draw">DRAW</div> -->
     </div>
     
     <script
         src="https://code.jquery.com/jquery-3.5.1.js"
         integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
         crossorigin="anonymous"></script>
+    <script src="./decoration.js"></script>
     <script src="index.js"></script>
 </body>
 </html>
