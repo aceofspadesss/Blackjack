@@ -1,5 +1,5 @@
 body{
-    background-color: #205c30;
+    background-color: black;
 }
 .container{
     position: fixed;
@@ -19,6 +19,7 @@ body{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    z-index: 10;
 }
 .main-bg{
     position: fixed;
@@ -71,8 +72,6 @@ body{
     animation-name: fade-out;
     animation-duration: 1s;
     animation-delay: 2s;
-    
-    
 }
 .title{
     z-index: 3;
@@ -88,98 +87,435 @@ body{
     animation-duration: 1s;
     text-shadow: 0px 4px black;
 }
-.bet{
+.betting{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    display: flex;
+}
+.flash-mask{
+    width: 500px;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 50%;
+    background-color: black;
+    z-index: 6;
+    animation-fill-mode: forwards;
+    animation-name: mask-down;
+    animation-duration: 1s;
+}
+.flash{
+    width: 500px;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 50%;
+    background-color: white;
+    clip-path: polygon(58% 0, 70% 0%, 50% 34%, 73% 78%, 58% 100%, 32% 100%, 59% 74%, 38% 34%);
+    z-index: 5;
+}
+.flash-left{
+    background-color: rgb(255, 78, 78);
+    animation-fill-mode: forwards;
+    animation-name: flash-left;
+    animation-duration: 1s;
+    animation-delay: 1s;
+    z-index: 4;
+}
+.flash-right{
+    background-color: rgb(94, 94, 255);
+    animation-fill-mode: forwards;
+    animation-name: flash-right;
+    animation-duration: 1s;
+    animation-delay: 1s;
+    z-index: 4;
+}
+.betting-message{
+    width: 35%;
+    height: 100%;
+    background-color: blue;
+    text-align: center;
+    overflow: hidden;
+}
+.betting-choice{
+    width: 65%;
+    height: 100%;
+    background-color: red;
+    overflow: hidden;
+}
+.message{
+    font-family: 'Staatliches', cursive;
+    color: white;
+    font-size: 80px;
+    transform: rotate(20deg);
+    margin-top: -370px;
+    margin-left: 50px;
+    z-index: 2;
+    opacity: 0%;
+    animation-fill-mode: forwards;
+    animation-name: appear;
+    animation-duration: 1s;
+    animation-delay: 4s;
+}
+.decor-mask{
+    background-color: black;
+    width: 150%;
+    height: 50%;
+    clip-path: polygon(0 30%, 100% 22%, 100% 73%, 0 55%);
+    transform: rotate(20deg);
+    margin-top: 100px;
+    z-index: 1;
+    opacity: 0%;
+    animation-fill-mode: forwards;
+    animation-name: appear;
+    animation-duration: 1s;
+    animation-delay: 3s;
+}
+.betting-message-mask{
+    width: 100%;
+    height: 60%;
+    background-color: blue;
+    position: absolute;
+    z-index: 3;
+    opacity: 0%;
+    animation-fill-mode: forwards;
+    animation-name: decor-animation;
+    animation-duration: 1s;
+    animation-delay: 3s;
+}
+.bet-old{
     position: fixed;
     bottom: 0;
     left: 0;
     width: 100%;
     height: 100%;
     display: none;
-    
 }
-.bet-info{
+.betting-mask-left{
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    position: fixed;
+    right: 30%;
+    animation-fill-mode: forwards;
+    animation-name: fixed-slide-left;
+    animation-duration: 3s;
+    animation-delay: 2s;
+}
+.betting-mask-right{
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    position: fixed;
+    left: 64%;
+    animation-fill-mode: forwards;
+    animation-name: fixed-slide-right;
+    animation-duration: 3s;
+    animation-delay: 2s;
+}
+.bg-star{
     color: white;
-    font-family: Arial, Helvetica, sans-serif;
+    font-size: 240px;
+    animation-name: scale;
+    animation-duration: 5s;
+    animation-delay: 1s;
+    animation-iteration-count: infinite;
+}
+.money-counter{
+    position: fixed;
+    left: -10%;
+    top: 0;
+    width: 0%;
+    height: 10%;
+    background-color: black;
+    color: white;
+    clip-path: polygon(0 0, 100% 0%, 75% 100%, 0% 100%);
+    font-family: 'Staatliches', cursive;
+    font-size: 60px;
+    padding-left: 40px;
+    animation-fill-mode: forwards;
+    animation-name: hud-slide-left;
+    animation-duration: 1s;
+    animation-delay: 3s;
+}
+.money{
+    margin-top: 10px;
+    opacity: 0%;
+    animation-fill-mode: forwards;
+    animation-name: appear;
+    animation-duration: 1s;
+    animation-delay: 4s;
+}
+.bet-counter-mask{
+    width: 27%;
+    height: 10%;
+    background-color: red;
+    position: fixed;
+    left: 40%;
+    z-index: 2;
+    opacity: 0%;
+    animation-fill-mode: forwards;
+    animation-name: hud-slide-down;
+    animation-duration: 1.5s;
+    animation-delay: 3s;
+}
+.bet-counter{
+    position: fixed;
+    left: 40%;
+    top: 0;
+    width: 27%;
+    height: 10%;
+    background-color: black;
+    color: white;
+    clip-path: polygon(0 0, 100% 0%, 100% 100%, 20% 100%);
+    font-family: 'Staatliches', cursive;
     font-size: 60px;
     text-align: center;
+    opacity: 0%;
+    animation-fill-mode: forwards;
+    animation-name: appear;
+    animation-duration: 1s;
+    animation-delay: 3.5s;
 }
-.chip500{
-    position: relative;
-    width: 10vw;
-    height: 10vh;
-    bottom: -65vh;
-    left: 25vw;
-    z-index: 5;
+.bet{
+    margin-top: 10px;
+    opacity: 0%;
+    animation-fill-mode: forwards;
+    animation-name: appear;
+    animation-duration: 1s;
+    animation-delay: 4s;
 }
-.chip100{
-    position: relative;
-    width: 10vw;
-    height: 10vh;
-    bottom: -50vh;
-    left: 17vw;
-    z-index: 4;
-}
-.chip10{
-    position: relative;
-    width: 10vw;
-    height: 10vh;
-    bottom: -28vh;
-    left: 11vw;
-    z-index: 3;
-}
-.chip1{
-    position: relative;
-    width: 10vw;
-    height: 10vh;
-    bottom: -7vh;
-    left: 7vw;
-    z-index: 2;
-}
-.chip-img{
-    width: 10vw;
+.rolling-chip1{
+    width: 200px;
     position: absolute;
     left: 0;
-    top: 0;
+    top: -25%;
+    opacity: 25%;
+    animation-name: going-down-chips;
+    animation-duration: 20s;
+    animation-delay: 4s;
+}
+.rolling-chip2{
+    width: 200px;
+    position: absolute;
+    left: 200px;
+    bottom: -25%;
+    opacity: 25%;
+    animation-name: going-up-chips;
+    animation-duration: 20s;
+    animation-delay: 4s;
+    animation-iteration-count: infinite;
+}
+.bg-chip{
+    width: 60%;
+    height: 100%;
+    overflow: hidden;
+}
+.bet-chips{
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    left: -20%;
+    top: 12%;
+    animation-fill-mode: forwards;
+    animation-name: roll-out-chipset;
+    animation-duration: 1s;
+    animation-delay: 4s;
+}
+
+.bg-chips1, .bg-chips3, .bg-chips5{
+    width: 200px;
+    height: 200px;
+    background-image: url(./images/chip.png);
+    background-size: cover;
+    opacity: 25%;
+    position: absolute;
+    top: 150%;
+    -webkit-animation: step-move-one 32s linear infinite;
+    animation: step-move-one 32s linear infinite;
+}
+.bg-chips2, .bg-chips4, .bg-chips6{
+    width: 200px;
+    height: 200px;
+    margin-left: 200px;
+    background-image: url(./images/chip.png);
+    background-size: cover;
+    opacity: 25%;
+    position: absolute;
+    bottom: 150%;
+    -webkit-animation: step-move-one2 32s linear infinite;
+    animation: step-move-one2 32s linear infinite;
+}
+.bg-chips3{
+    margin-left: 400px;
+}
+.bg-chips4{
+    margin-left: 600px;
+}
+.bg-chips5{
+    margin-left: 800px;
+}
+.bg-chips6{
+    margin-left: 1000px;
+}
+.bc1{
+    animation-delay: 0s;
+}
+.bc2{
+    animation-delay: 3.2s;
+}
+.bc3{
+    animation-delay: 6.4s;
+}
+.bc4{
+    animation-delay: 9.6s;
+}
+.bc5{
+    animation-delay: 12.8s;
+}
+.bc6{
+    animation-delay: 16s;
+}
+.bc7{
+    animation-delay: 19.2s;
+}
+.bc8{
+    animation-delay: 22.4s;
+}
+.bc9{
+    animation-delay: 25.6s;
+}
+.bc10{
+    animation-delay: 28.8s;
+}
+.bc11{
+    animation-delay: 32s;
+}
+
+.chip{
+    width: 200px;
+    height: 200px;
+    background-image: url(./images/chip.png);
+    background-size: cover;
+    margin-top: 5px;
+}
+.chip:hover{
+    animation-name: spin;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
 }
 .chip-value{
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 36px;
-    color: white;
-    position: absolute;
-    left: 65px;
-    bottom: -60px;
-}
-.player-money{
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 60px;
-    color: white;
     text-align: center;
-    margin-top: 15%;
-    margin-left: -10%;
+    color: white;
+    font-family: 'Staatliches', cursive;
+    font-size: 30px;
+    margin-top: 40%;
 }
-.bet-value{
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 60px;
+.arrow-set{
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    left: -60%;
+    top: 7%;
+    animation-fill-mode: forwards;
+    animation-name: roll-out-arrows;
+    animation-duration: 1s;
+    animation-delay: 5s;
+}
+.arrow{
+    width: 600px;
+    height: 100px;
+    background-color: black;
+    clip-path: polygon(0% 20%, 60% 30%, 60% 0%, 100% 50%, 60% 100%, 60% 70%, 0% 80%);
+    margin-top: 17%;
+}
+.arrow100{
+    width: 500px;
+}
+.arrow10{
+    width: 400px;
+}
+.arrow1{
+    width: 300px;
+}
+.bet500{
+    position: fixed;
+    left: 1%;
+    top: 12%;
+    width: 200px;
+    height: 200px;
+    background-image: url(./images/chip.png);
+    background-size: cover;
+    margin-top: 5px;
+    animation-fill-mode: forwards;
+    animation-name: roll-out-bet-500;
+    animation-duration: 1s;
+}
+.bet100{
+    position: fixed;
+    left: 1%;
+    top: 12%;
+    width: 200px;
+    height: 200px;
+    background-image: url(./images/chip.png);
+    background-size: cover;
+    margin-top: 5px;
+    animation-fill-mode: forwards;
+    animation-name: roll-out-bet-100;
+    animation-duration: 1s;
+}
+.bet10{
+    position: fixed;
+    left: 1%;
+    top: 12%;
+    width: 200px;
+    height: 200px;
+    background-image: url(./images/chip.png);
+    background-size: cover;
+    margin-top: 5px;
+    animation-fill-mode: forwards;
+    animation-name: roll-out-bet-10;
+    animation-duration: 1s;
+}
+.bet1{
+    position: fixed;
+    left: 1%;
+    top: 12%;
+    width: 200px;
+    height: 200px;
+    background-image: url(./images/chip.png);
+    background-size: cover;
+    margin-top: 5px;
+    animation-fill-mode: forwards;
+    animation-name: roll-out-bet-1;
+    animation-duration: 1s;
+}
+
+.deal-wrapper{
+    width: 200px;
+    height: 200px;
     color: white;
     text-align: center;
     position: fixed;
-    top: -10px;
-    left: 15%;
-    display: none;
+    bottom: -40%;
+    left: 49%;
+    background-color: white;
+    clip-path: polygon(37% 0, 100% 0%, 75% 78%, 9% 78%);
 }
 .deal{
-    width: 100px;
-    height: 100px;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 30px;
-    border-radius: 50px;
-    border: 1px solid black;
+    width: 150px;
+    height: 150px;
+    background-color: red;
     color: white;
-    background-color: gray;
-    position: fixed;
-    left: 30%;
-    bottom: 40%;
-    display: none;
+    font-family: 'Staatliches', cursive;
+    font-size: 50px;
+    clip-path: polygon(37% 0, 100% 0%, 68% 100%, 0 100%);
+    margin-top: 5px;
+    margin-left: 25px;
 }
 .game-window{
     position: fixed;
@@ -188,10 +524,201 @@ body{
     width: 100%;
     height: 100%;
     z-index: 10;
+}
+.counters{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 150px;
+    background-color: red;
+    display: flex;
+    z-index: 3;
+}
+
+.game-bet{
+    background-color: black;
+    border: white;
+    width: 33%;
+    color: white;
+    text-align: center;
+    font-family: 'Staatliches', cursive;
+    font-size: 60px;
+    clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+}
+.game-text{
+    margin-top: 30px;
+}
+.game-deal, .game-hit, .game-stand{
+    background-color: black;
+    width: 16%;
+    height: 100px;
+    margin-left: -100px;
+    color: white;
+    text-align: center;
+    font-family: 'Staatliches', cursive;
+    font-size: 60px;
+    border: 3px solid white;
+}
+.game-chips{
+    width: 100%;
+    height: 80%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background-color: white;
+}
+.table{
+    width: 100%;
+    background-color: blue;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    z-index: 2;
+    overflow: hidden;
+    display: flex;
+    background-image: url(./images/game-bg.jpg);
+    background-size: cover;
+}
+.game-buttons{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 150px;
+    background-color: red;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    z-index: 100;
+    overflow: hidden;
+}
+.game-money, .game-bet, .game-winrate{
+    background-color: black;
+    border: white;
+    width: 33%;
+    color: white;
+    text-align: center;
+    font-family: 'Staatliches', cursive;
+    font-size: 60px;
+    clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+}
+.player-hand{
+    position: absolute;
+    width: 40%;
+    height: 40%;
+    background-color: green;
+    border: 5px solid white;
+    left: 5%;
+    top: 30%;
+    overflow: hidden;
+}
+.player-score{
+    position: absolute;
+    right: -20px;
+    bottom: 0;
+    width: 15%;
+    height: 15%;
+    background-color: black;
+    color: white;
+    text-align: center;
+    font-family: 'Staatliches', cursive;
+    font-size: 45px;
+    clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 0% 100%);
+}
+.house{
+    position: absolute;
+    width: 40%;
+    height: 40%;
+    background-color: green;
+    right: 5%;
+    top: 30%;
+    overflow: hidden;
+    border: 5px solid white;
+}
+.house-score{
+    position: absolute;
+    right: -20px;
+    bottom: 0;
+    width: 15%;
+    height: 15%;
+    background-color: black;
+    color: white;
+    text-align: center;
+    font-family: 'Staatliches', cursive;
+    font-size: 45px;
+    clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 0% 100%);
+}
+.deck{
+    position: absolute;
+    left: 46%;
+    top: 40%;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-color: black;
+    color: white;
+    text-align: center;
+    font-family: 'Staatliches', cursive;
+    font-size: 120px;
+}
+.result{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 100;
+    color: white;
+    font-family: 'Staatliches', cursive;
     display: none;
 }
-.hit{
+.result-mask{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background-color: black;
+    opacity: 30%;
+}
+.result-text{
+    z-index: 101;
+    position: absolute;
+    top: 10%;
+    left: 5%;
+    font-size: 30vw;
+}
+.game-chips{
+    width: 100%;
+    height: 50%;
+    position: fixed;
+    left: 0;
+    top: 26%;
+    z-index: 100;
+    background-color:rgba(0, 0, 0, 0.5);
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.chips-wrapper{
+    margin-top: 2%;
+    display: flex;
+}
+.submit, .reset{
     width: 100px;
+    height: 50px;
+    margin-top: 20%;
+    background-color: black;
+    border: 2px solid white;
+    color: white;
+    font-family: 'Staatliches', cursive;
+    font-size: 20px;
+}
+/* .hit{ */
+    /* width: 100px;
     height: 100px;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 30px;
@@ -258,4 +785,4 @@ body{
     position: fixed;
     right: 15%;
     top: 20%;
-}
+} */

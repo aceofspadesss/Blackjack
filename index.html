@@ -7,45 +7,140 @@
     <link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./main.css">
     <link rel="stylesheet" href="./animation.css">
+    <link rel="stylesheet" href="stars.css">
 </head>
 <body>
     <div class="container">
-        <div class="main-menu">
+        <!-- <div class="main-menu">
             <div class="main-bg"></div>
             <p class="title">BLACKJACK</p>
             <span class="btn-effect-left"></span>
             <span class="btn-effect-right"></span>
             <button class="new-game">NEW GAME</button>
-        </div>
-        <div class="bet">
-            <p class="bet-info">Place Your Bets</p>
-            <div class="chip500">
-                <img class="chip-img" src="images/chip.png">
-                <p class="chip-value">500</p>
+        </div> -->
+        <!-- <div class="betting">
+            <div class="flash-mask"></div>
+            <div class="flash"></div>
+            <div class="flash flash-left"></div>
+            <div class="flash flash-right"></div>
+            <div class="betting-mask-left"></div>
+            <div class="betting-mask-right"></div>
+            <div class="betting-choice">
+                <div class="bg-chip">
+                    <div class="col1">
+                        
+                    </div>
+                    <div class="col2">
+                        
+                    </div>
+                    <div class="col3">
+                        
+                    </div>
+                    <div class="col4">
+                        
+                    </div>
+                    <div class="col5">
+                        
+                    </div>
+                    <div class="col6">
+                        
+                    </div>
+                </div>
+                <div class="money-counter"><p class="money">Money: $2500</p></div>
+                <div class="bet-counter-mask"></div>
+                <div class="bet-counter"><p class="bet">Bet: $500</p></div>
+                <div class="arrow-set">
+                    <div class="arrow500 arrow"></div>
+                    <div class="arrow100 arrow"></div>
+                    <div class="arrow10 arrow"></div>
+                    <div class="arrow1 arrow"></div>
+                </div>
+                <div class="bet-chips">
+                    <div class="chip" id="chip500">
+                        <p class="chip-value">500</p>
+                    </div>
+                    <div class="chip" id="chip100">
+                        <p class="chip-value">100</p>
+                    </div>
+                    <div class="chip" id="chip10">
+                        <p class="chip-value">10</p>
+                    </div>
+                    <div class="chip" id="chip1">
+                        <p class="chip-value">1</p>
+                    </div>
+                </div>
+                <div class="deal-wrapper">
+                    <button class="deal">Deal</button>
+                </div>
+            
             </div>
-            <div class="chip100">
-                <img class="chip-img" src="images/chip.png">
-                <p class="chip-value">100</p>
+            <div class="betting-message">
+                <div class="star-container">
+                    <div class="star-wrapper"></div>
+                </div>
+                <div class="betting-message-mask"></div>
+                <div class="decor-mask"></div>
+                <p class="message">Place Your Bets</p>
             </div>
-            <div class="chip10">
-                <img class="chip-img" src="images/chip.png">
-                <p class="chip-value">10</p>
-            </div>
-            <div class="chip1">
-                <img class="chip-img" src="images/chip.png">
-                <p class="chip-value">1</p>
-            </div>
-            <p class="player-money"></p>
-            <p class="bet-value"></p>
-            <button class="deal">Deal</button>
-        </div>
+        </div> -->
         <div class="game-window">
-            <div class="player-hand"></div>
+            <!-- <div class="player-hand"></div>
             <div class="house-hand"></div>
             <div class="player-points">0</div>
             <div class="house-points">0</div>
             <button class="hit">Hit</button>
             <button class="stand">Stand</button>
+            <button class="deal"></button> -->
+            
+            <div class="game-chips">
+                <div class="chips-wrapper">
+                    <div class="chip game-chip" id="chip500">
+                        <p class="chip-value">500</p>
+                    </div>
+                    <div class="chip game-chip" id="chip100">
+                        <p class="chip-value">100</p>
+                    </div>
+                    <div class="chip game-chip" id="chip10">
+                        <p class="chip-value">10</p>
+                    </div>
+                    <div class="chip game-chip" id="chip1">
+                        <p class="chip-value">1</p>
+                    </div>
+                </div>
+                <div class="button-wrapper">
+                    <button class="submit">Submit</button>
+                    <button class="reset">Reset</button>
+                </div>
+            </div>
+            <div class="counters">
+                <div class="game-money"><p class="game-text game-m-counter">Money: $2500</p></div>
+                <div class="game-bet"><p class="game-text game-b-counter">Bet: $500</p></div>
+                <div class="game-winrate"><p class="game-text winrate">Win Ratio: 100%</p></div>
+            </div>
+            <div class="table">
+                <div class="player-hand">
+                    <div class="player-score">
+                        10
+                    </div>
+                </div>
+                <div class="deck">
+                    52
+                </div>
+                <div class="house">
+                    <div class="house-score">
+                        21
+                    </div>
+                </div>
+            </div>
+            <div class="game-buttons">
+                    <button class="game-deal">Deal</button>
+                    <button class="game-hit">Hit</button>
+                    <button class="game-stand">Stand</button>
+            </div>
+            <div class="result">
+                <div class="result-mask"></div>
+                <div class="result-text"></div>
+            </div>
         </div>
         <!-- <div class="victory">YOU WIN</div>
         <div class="loss">YOU LOSE</div>
@@ -58,5 +153,6 @@
         crossorigin="anonymous"></script>
     <script src="./decoration.js"></script>
     <script src="index.js"></script>
+    <script src="stars.js"></script>
 </body>
 </html>

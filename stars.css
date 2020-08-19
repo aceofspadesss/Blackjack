@@ -1,0 +1,164 @@
+.star-container {
+  position: absolute;
+  width: 40%;
+  height: 100%;
+  top: 0;
+  overflow: hidden;
+  background: transparent;
+  opacity: 0%;
+  animation-fill-mode: forwards;
+    animation-name: stars-appear;
+    animation-duration: 2s;
+    animation-delay: 5s;
+}
+
+.double {
+  top: 330px;
+}
+
+.tripple {
+  top: 680px;
+}
+
+.star-wrapper {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+
+svg {
+  position: absolute;
+  margin: 0 auto;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  left: 0;
+  right: 0;
+}
+
+svg.grow {
+  height: 100%;
+  width: 100%;
+  -webkit-animation: grow 10s linear;
+          animation: grow 10s linear;
+}
+
+svg.shrink {
+  height: 0%;
+  width: 0%;
+  -webkit-animation: shrink 10s linear;
+          animation: shrink 10s linear;
+}
+
+svg.black polygon {
+  fill: black;
+}
+
+svg.white polygon {
+  fill: white;
+}
+
+.star-wrapper:nth-child(5n) svg.black polygon {
+  fill: #8a8a8a !important;
+}
+
+.shrinker svg:nth-child(1) {
+  z-index: 12;
+}
+
+.shrinker svg:nth-child(2) {
+  z-index: 11;
+}
+
+.shrinker svg:nth-child(3) {
+  z-index: 10;
+}
+
+.shrinker svg:nth-child(4) {
+  z-index: 9;
+}
+
+.shrinker svg:nth-child(5) {
+  z-index: 8;
+}
+
+.shrinker svg:nth-child(6) {
+  z-index: 7;
+}
+
+.shrinker svg:nth-child(7) {
+  z-index: 6;
+}
+
+.shrinker svg:nth-child(8) {
+  z-index: 5;
+}
+
+.shrinker svg:nth-child(9) {
+  z-index: 4;
+}
+
+.shrinker svg:nth-child(10) {
+  z-index: 3;
+}
+
+.shrinker svg:nth-child(11) {
+  z-index: 2;
+}
+
+.shrinker svg:nth-child(12) {
+  z-index: 1;
+}
+
+@-webkit-keyframes grow {
+  0% {
+    width: 0%;
+    height: 0%;
+  }
+  90% {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+@keyframes grow {
+  0% {
+    width: 0%;
+    height: 0%;
+  }
+  90% {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+@-webkit-keyframes shrink {
+  0% {
+    width: 100%;
+    height: 100%;
+  }
+  10% {
+    width: 100%;
+    height: 100%;
+  }
+  100% {
+    width: 0%;
+    height: 0%;
+  }
+}
+
+@keyframes shrink {
+  0% {
+    width: 100%;
+    height: 100%;
+  }
+  10% {
+    width: 100%;
+    height: 100%;
+  }
+  100% {
+    width: 0%;
+    height: 0%;
+  }
+}
+/*# sourceMappingURL=stars.css.map */
