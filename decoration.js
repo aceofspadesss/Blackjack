@@ -13,25 +13,41 @@ function symbolGenerator () {
 
 setInterval(() => {symbolGenerator()}, 2000)
 
-// function rollingChips () {
-//     let horizontalPosition = 0;
-//     for (i = 0; i < 3; i++){
-//         $('<img src="./images/chip.png" class="rolling-chip1">').appendTo('.bg-chip').css({left: `${horizontalPosition}px`});
-//         $('<img src="./images/chip.png" class="rolling-chip2">').appendTo('.bg-chip').css({left: `${horizontalPosition + 200}px`});
-//         horizontalPosition = horizontalPosition + 400;
-//     }
-    
-// }
-// rollingChips()
-
 function rollingChips () {
     for (i = 1; i < 7; i++){
         for (c = 0; c < 10; c++){
             $(`<div class="bg-chips${i} bc${c}"></div>`).appendTo(`.col${i}`);
         }
     }
-    // for (c = 0; c < 6; c++){
-    //     $(`<div class="bg-chips1 bc${i}"></div>`)
-    // }
 }
 rollingChips();
+
+const transition = () => {
+    $('.main-menu').css('display', 'none');
+    $('.betting').css('display', 'flex');
+}
+
+const gameTransition = () => {
+    $('.betting').css('display', 'none');
+    $('.game-window').css('display', 'block');
+}
+
+$('.new-game').click((event) => {
+    $('<div class="transition"></div>').css({"left": event.pageX, "top": event.pageY,}).appendTo('.main-menu');
+    setTimeout(() => {
+        transition();
+    }, 1000);
+    setTimeout(() => {
+        $('.transition').remove()   
+    }, 1000)
+})
+
+$('.deal').click((event) => {
+    $('<div class="transition"></div>').css({left: event.pageX, top: event.pageY, backgroundColor: 'red'}).appendTo('.betting');
+    setTimeout(() => {
+        gameTransition();
+    }, 1000);
+    setTimeout(() => {
+        $('.transition').remove()   
+    }, 1000)
+})

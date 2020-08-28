@@ -131,3 +131,16 @@
 @keyframes step-move-one2 {
     to {bottom: -100%; -webkit-transform: rotate(360deg); transform:rotate(-360deg);}
 }
+@keyframes transition{
+    from {transform: scale(0)}
+    to {transform: scale(600)}
+}
+@keyframes counters{
+    from {left: -100%;}
+    to {left: 0;}
+}
+
+@keyframes game-buttons{
+    from {right: -100%}
+    to {right: 0}
+}
