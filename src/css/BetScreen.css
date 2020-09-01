@@ -1,0 +1,551 @@
+.betting{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    display: block;
+}
+.flash-mask{
+    width: 500px;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 50%;
+    background-color: black;
+    z-index: 6;
+    animation-fill-mode: forwards;
+    animation-name: mask-down;
+    animation-duration: 1s;
+    animation-delay: 1s;
+}
+.flash{
+    width: 500px;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 50%;
+    background-color: white;
+    clip-path: polygon(58% 0, 70% 0%, 50% 34%, 73% 78%, 58% 100%, 32% 100%, 59% 74%, 38% 34%);
+    z-index: 5;
+}
+.flash-left{
+    background-color: rgb(255, 78, 78);
+    animation-fill-mode: forwards;
+    animation-name: flash-left;
+    animation-duration: 1s;
+    animation-delay: 2s;
+    z-index: 4;
+}
+.flash-right{
+    background-color: rgb(94, 94, 255);
+    animation-fill-mode: forwards;
+    animation-name: flash-right;
+    animation-duration: 1s;
+    animation-delay: 2s;
+    z-index: 4;
+}
+.betting-message{
+    width: 0%;
+    height: 100%;
+    background-color: blue;
+    text-align: center;
+    overflow: hidden;
+    position: absolute;
+    left: 64%;
+    top: 0;
+    animation-fill-mode: forwards;
+    animation-name: bet-message;
+    animation-duration: 1s;
+    animation-delay: 3.2s;
+}
+.betting-choice{
+    width: 65%;
+    height: 100%;
+    background-color: red;
+    overflow: hidden;
+}
+.message{
+    font-family: 'Staatliches', cursive;
+    color: white;
+    font-size: 80px;
+    transform: rotate(20deg);
+    margin-top: -420px;
+    margin-left: -100px;
+    z-index: 2;
+    opacity: 0%;
+    animation-fill-mode: forwards;
+    animation-name: appear;
+    animation-duration: 1s;
+    animation-delay: 5s;
+}
+.decor-mask{
+    background-color: black;
+    width: 150%;
+    height: 50%;
+    clip-path: polygon(0 30%, 100% 22%, 100% 73%, 0 55%);
+    transform: rotate(20deg);
+    margin-top: 100px;
+    z-index: 1;
+    opacity: 0%;
+    animation-fill-mode: forwards;
+    animation-name: appear;
+    animation-duration: 1s;
+    animation-delay: 4s;
+}
+.betting-message-mask{
+    width: 100%;
+    height: 60%;
+    background-color: blue;
+    position: absolute;
+    z-index: 3;
+    opacity: 0%;
+    animation-fill-mode: forwards;
+    animation-name: decor-animation;
+    animation-duration: 1s;
+    animation-delay: 4s;
+}
+.bet-old{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+.betting-mask-left{
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    position: fixed;
+    right: 30%;
+    animation-fill-mode: forwards;
+    animation-name: fixed-slide-left;
+    animation-duration: 3s;
+    animation-delay: 3s;
+}
+.betting-mask-right{
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    position: fixed;
+    left: 64%;
+    animation-fill-mode: forwards;
+    animation-name: fixed-slide-right;
+    animation-duration: 3s;
+    animation-delay: 3s;
+}
+.bg-star{
+    color: white;
+    font-size: 240px;
+    animation-name: scale;
+    animation-duration: 5s;
+    animation-delay: 1s;
+    animation-iteration-count: infinite;
+}
+.money-counter{
+    position: fixed;
+    left: -10%;
+    top: 0;
+    width: 0%;
+    height: 10%;
+    background-color: black;
+    color: white;
+    clip-path: polygon(0 0, 100% 0%, 75% 100%, 0% 100%);
+    font-family: 'Staatliches', cursive;
+    font-size: 60px;
+    padding-left: 40px;
+    animation-fill-mode: forwards;
+    animation-name: hud-slide-left;
+    animation-duration: 1s;
+    animation-delay: 4s;
+}
+.money{
+    margin-top: 10px;
+    opacity: 0%;
+    animation-fill-mode: forwards;
+    animation-name: appear;
+    animation-duration: 1s;
+    animation-delay: 5s;
+}
+.bet-counter-mask{
+    width: 27%;
+    height: 10%;
+    background-color: red;
+    position: fixed;
+    left: 40%;
+    z-index: 2;
+    opacity: 0%;
+    animation-fill-mode: forwards;
+    animation-name: hud-slide-down;
+    animation-duration: 1.5s;
+    animation-delay: 4s;
+}
+.bet-counter{
+    position: fixed;
+    left: 40%;
+    top: 0;
+    width: 27%;
+    height: 10%;
+    background-color: black;
+    color: white;
+    clip-path: polygon(0 0, 100% 0%, 100% 100%, 20% 100%);
+    font-family: 'Staatliches', cursive;
+    font-size: 60px;
+    text-align: center;
+    opacity: 0%;
+    animation-fill-mode: forwards;
+    animation-name: appear;
+    animation-duration: 1s;
+    animation-delay: 4.5s;
+}
+.bet{
+    margin-top: 10px;
+    opacity: 0%;
+    animation-fill-mode: forwards;
+    animation-name: appear;
+    animation-duration: 1s;
+    animation-delay: 5s;
+}
+.rolling-chip1{
+    width: 200px;
+    position: absolute;
+    left: 0;
+    top: -25%;
+    opacity: 25%;
+    animation-name: going-down-chips;
+    animation-duration: 20s;
+    animation-delay: 5s;
+}
+.rolling-chip2{
+    width: 200px;
+    position: absolute;
+    left: 200px;
+    bottom: -25%;
+    opacity: 25%;
+    animation-name: going-up-chips;
+    animation-duration: 20s;
+    animation-delay: 5s;
+    animation-iteration-count: infinite;
+}
+.bet-chips{
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    left: -20%;
+    top: 12%;
+    animation-fill-mode: forwards;
+    animation-name: roll-out-chipset;
+    animation-duration: 1s;
+    animation-delay: 5s;
+}
+.chip{
+    width: 200px;
+    height: 200px;
+    background-size: cover;
+    margin-top: 5px;
+    background: url(../images/chip.png)
+}
+.chip:hover{
+    animation-name: spin;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+}
+.chip-value{
+    text-align: center;
+    color: white;
+    font-family: 'Staatliches', cursive;
+    font-size: 30px;
+    margin-top: 40%;
+}
+#chip1{
+    position: fixed;
+    bottom: 0.5%;
+}
+#chip10{
+    position: fixed;
+    bottom: 22.5%;
+}
+#chip100{
+    position: fixed;
+    bottom: 44.3%;
+}
+#chip500{
+    position: fixed;
+    bottom: 66%;
+}
+.arrow-set{
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    left: -60%;
+    top: 7%;
+    animation-fill-mode: forwards;
+    animation-name: roll-out-arrows;
+    animation-duration: 1s;
+    animation-delay: 6s;
+}
+.arrow{
+    width: 600px;
+    height: 100px;
+    background-color: black;
+    clip-path: polygon(0% 20%, 60% 30%, 60% 0%, 100% 50%, 60% 100%, 60% 70%, 0% 80%);
+    margin-top: 17%;
+}
+.arrow100{
+    width: 500px;
+}
+.arrow10{
+    width: 400px;
+}
+.arrow1{
+    width: 300px;
+}
+.bet500{
+    position: fixed;
+    left: 1%;
+    top: 12%;
+    width: 200px;
+    height: 200px;
+    background-size: cover;
+    margin-top: 5px;
+    /* animation-fill-mode: forwards;
+    animation-name: roll-out-bet-500;
+    animation-duration: 1s; */
+    background-image: url(../images/chip.png);
+}
+.bet100{
+    position: fixed;
+    left: 1%;
+    top: 12%;
+    width: 200px;
+    height: 200px;
+    background-size: cover;
+    margin-top: 5px;
+    animation-fill-mode: forwards;
+    animation-name: roll-out-bet-100;
+    animation-duration: 1s;
+    background-image: url(../images/chip.png);
+}
+.bet10{
+    position: fixed;
+    left: 1%;
+    top: 12%;
+    width: 200px;
+    height: 200px;
+    background-size: cover;
+    margin-top: 5px;
+    animation-fill-mode: forwards;
+    animation-name: roll-out-bet-10;
+    animation-duration: 1s;
+    background-image: url(../images/chip.png);
+}
+.bet1{
+    position: fixed;
+    left: 1%;
+    top: 12%;
+    width: 200px;
+    height: 200px;
+    background-size: cover;
+    margin-top: 5px;
+    animation-fill-mode: forwards;
+    animation-name: roll-out-bet-1;
+    animation-duration: 1s;
+    background-image: url(../images/chip.png);
+}
+/* .bet1:hover, .bet10:hover, .bet100:hover, .bet500:hover{
+    animation-name: spin;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+} */
+
+.deal-wrapper{
+    width: 200px;
+    height: 200px;
+    color: white;
+    text-align: center;
+    position: fixed;
+    bottom: -40%;
+    left: 49%;
+    background-color: white;
+    clip-path: polygon(37% 0, 100% 0%, 75% 78%, 9% 78%);
+    animation-fill-mode: forwards;
+    animation-name: deal-popup;
+    animation-duration: 1s;
+}
+.deal{
+    width: 150px;
+    height: 150px;
+    background-color: red;
+    color: white;
+    font-family: 'Staatliches', cursive;
+    font-size: 50px;
+    clip-path: polygon(37% 0, 100% 0%, 68% 100%, 0 100%);
+    margin-top: 5px;
+    margin-left: 25px;
+    text-decoration: none;
+}
+.choice-bg{
+    width: 65%;
+    height: 100%;
+    background-image: url(../images/bet-choice.jpg);
+    background-size: cover;
+    opacity: 0%;
+    overflow: hidden;
+    position: absolute;
+    left: 0;
+    top: 0;
+    animation-fill-mode: forwards;
+    animation-name: bg-opacity;
+    animation-duration: 1s;
+    animation-delay: 7s;
+}
+.message-bg{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    background-image: url(../images/bet-msg.jpg);
+    background-size: cover;
+    background-position: center;
+    opacity: 0%;
+    overflow: hidden;
+    animation-fill-mode: forwards;
+    animation-name: bg-opacity;
+    animation-duration: 1s;
+    animation-delay: 7s;
+}
+
+/*/////////////////////////////////////////////////ANIMATIONS////////////////////////////////////////////*/
+
+@keyframes going-down-chips{
+    from {top: -50%}
+    to {top: 200%}
+    100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } 
+}
+@keyframes going-up-chips{
+    from {bottom: -50%}
+    to {bottom: 200%}
+    100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } 
+}
+@keyframes roll-out-chipset{
+    0%{left: -20%}
+    100%{left: 1%}
+}
+@keyframes roll-out-bet-500{
+    0%{left: 1%}
+    100%{left: 47%}
+    100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } 
+}
+@keyframes roll-back-bet-500{
+    0%{left: 47%}
+    100%{left: 1%}
+    100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } 
+}
+@keyframes roll-out-bet-100{
+    0%{left: 1%; top: 33%;}
+    100%{left: 42%; top: 33%}
+    100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } 
+}
+@keyframes roll-back-bet-100{
+    0%{left: 42%; top: 33%}
+    100%{left: 1%; top: 33%}
+    100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } 
+}
+@keyframes roll-out-bet-10{
+    0%{left: 1%; top: 55%}
+    100%{left: 37%; top: 55%}
+    100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } 
+}
+@keyframes roll-back-bet-10{
+    0%{left: 37%; top: 55%}
+    100%{left: 1%; top: 55%}
+    100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } 
+}
+@keyframes roll-out-bet-1{
+    0%{left: 1%; top: 77.5%}
+    100%{left: 32%; top: 77.5%}
+    100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } 
+}
+@keyframes roll-back-bet-1{
+    0%{left: 32%; top: 77.5%}
+    100%{left: 1%; top: 77.5%}
+    100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } 
+}
+@keyframes roll-out-arrows{
+    0%{left: -60%}
+    100%{left: 15%}
+}
+@keyframes spin { 
+    100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } 
+}
+@keyframes mask-down{
+    from {top: 0;}
+    to {top: 120%}
+}
+@keyframes flash-left{
+    from {left: 50%}
+    to {left: 48%;}
+}
+@keyframes flash-right{
+    from {left: 50%}
+    to {left: 52%;}
+}
+@keyframes fixed-slide-left{
+    from {right: 30%;}
+    to {right: 200%}
+}
+@keyframes fixed-slide-right{
+    from {left: 60%;}
+    to {left: 200%}
+}
+@keyframes decor-animation{
+    from {opacity: 100%; left: 60%;}
+    to {opacity: 100%; left: 200%;}
+}
+@keyframes appear{
+    from {opacity: 0%}
+    to {opacity: 100%}
+}
+@keyframes stars-appear{
+    from {opacity: 0%}
+    to {opacity: 25%}
+}
+@keyframes scale{
+    from {transform: scale(1.0); opacity: 50%;}
+    to {transform: scale(2.0); opacity: 0%;}
+}
+@keyframes hud-slide-left{
+    from {width: 0%; left: -10%}
+    to {width: 20%; left: 0;}
+}
+@keyframes hud-slide-down{
+    0% {top: 0%; opacity: 100%;}
+    90% {opacity: 100%}
+    100% {top: 10%; opacity: 0%}
+}
+@keyframes deal-popup{
+    from {bottom: -40%}
+    to {bottom: -5%}
+}
+@keyframes step-move-one {
+    to {top: -100%; -webkit-transform: rotate(360deg); transform:rotate(360deg);}
+}
+@keyframes step-move-one2 {
+    to {bottom: -100%; -webkit-transform: rotate(360deg); transform:rotate(-360deg);}
+}
+@keyframes transition{
+    from {transform: scale(0)}
+    to {transform: scale(600)}
+}
+
+@keyframes bet-message{
+    from {width: 0%}
+    to {width: 50%}
+}
+
+@keyframes bg-opacity{
+    from {opacity: 0%;}
+    to {opacity: 40%;}
+}

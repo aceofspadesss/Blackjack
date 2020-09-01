@@ -1,0 +1,236 @@
+.game-window{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+}
+.counters-mask{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 150px;
+    background-color: red;
+    z-index: 3;
+}
+.counters{
+    position: fixed;
+    left: -100%;
+    top: 0;
+    width: 100%;
+    height: 150px;
+    background-color: red;
+    display: flex;
+    z-index: 3;
+    animation-fill-mode: forwards;
+    animation-name: counters;
+    animation-duration: 1.5s;
+}
+
+.game-bet{
+    background-color: black;
+    border: white;
+    width: 33%;
+    color: white;
+    text-align: center;
+    font-family: 'Staatliches', cursive;
+    font-size: 60px;
+    clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+}
+.game-text{
+    margin-top: 30px;
+}
+.game-deal, .game-hit, .game-stand{
+    background-color: black;
+    width: 16%;
+    height: 100px;
+    margin-left: -100px;
+    color: white;
+    text-align: center;
+    font-family: 'Staatliches', cursive;
+    font-size: 60px;
+    border: 3px solid white;
+    text-decoration: none;
+}
+/* .game-chips{
+    width: 100%;
+    height: 80%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background-color: white;
+} */
+.table{
+    width: 100%;
+    background-color: blue;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    z-index: 2;
+    overflow: hidden;
+    display: flex;
+    background-image: url(../images/game-bg.jpg);
+    background-size: cover;
+}
+.game-buttons-mask{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 150px;
+    background-color: red;
+    z-index: 100;
+}
+.game-buttons{
+    position: absolute;
+    right: -100%;
+    bottom: 0;
+    width: 100%;
+    height: 150px;
+    background-color: red;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    z-index: 100;
+    overflow: hidden;
+    animation-fill-mode: forwards;
+    animation-name: game-buttons;
+    animation-duration: 1.5s;
+}
+.game-money, .game-bet, .game-winrate{
+    background-color: black;
+    border: white;
+    width: 33%;
+    color: white;
+    text-align: center;
+    font-family: 'Staatliches', cursive;
+    font-size: 60px;
+    clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+}
+.player-hand{
+    position: absolute;
+    width: 40%;
+    height: 40%;
+    background-color: green;
+    border: 5px solid white;
+    left: 5%;
+    top: 30%;
+    overflow: hidden;
+}
+.player-score{
+    position: absolute;
+    right: -20px;
+    bottom: 0;
+    width: 15%;
+    height: 15%;
+    background-color: black;
+    color: white;
+    text-align: center;
+    font-family: 'Staatliches', cursive;
+    font-size: 45px;
+    clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 0% 100%);
+}
+.house{
+    position: absolute;
+    width: 40%;
+    height: 40%;
+    background-color: green;
+    right: 5%;
+    top: 30%;
+    overflow: hidden;
+    border: 5px solid white;
+}
+.house-score{
+    position: absolute;
+    right: -20px;
+    bottom: 0;
+    width: 15%;
+    height: 15%;
+    background-color: black;
+    color: white;
+    text-align: center;
+    font-family: 'Staatliches', cursive;
+    font-size: 45px;
+    clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 0% 100%);
+}
+.deck{
+    position: absolute;
+    left: 46%;
+    top: 40%;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-color: black;
+    color: white;
+    text-align: center;
+    font-family: 'Staatliches', cursive;
+    font-size: 120px;
+}
+.result{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 100;
+    color: white;
+    font-family: 'Staatliches', cursive;
+    display: block;
+}
+.result-mask{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background-color: black;
+    opacity: 40%;
+}
+.result-text{
+    z-index: 101;
+    font-size: 30vw;
+}
+.game-chips{
+    width: 100%;
+    height: 84%;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    z-index: 200;
+    background-color:rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+.chips-wrapper{
+    width: 100%;
+    margin-top: -5%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.submit, .reset{
+    width: 100px;
+    height: 50px;
+    margin-top: 20%;
+    background-color: black;
+    border: 2px solid white;
+    color: white;
+    font-family: 'Staatliches', cursive;
+    font-size: 20px;
+}
+
+/*////////////////////////////////////////////////////////ANIMATIONS//////////////////////////////////////////////////*/
+
+@keyframes counters{
+    from {left: -100%}
+    to {left: 0;}
+}
+
+@keyframes game-buttons{
+    from {right: -100%}
+    to {right: 0}
+}
