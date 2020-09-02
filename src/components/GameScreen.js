@@ -49,9 +49,28 @@ const GameScreen = ({props, money, setMoney, bet, setBet, disabledChip500, disab
             if (housePoints.value < 17){
                 const response = await deckofcards.get(`/${KEY}/draw/?count=1`)
                 setHouse({data: [...houseHand.data, response.data.cards[0]]})
-                setHousePoints({value: housePoints.value + Number(response.data.cards[0].value)})
+                setHousePoints({value: housePoints.value + Number(response.data.cards[0].value)});
+
+                if (playerPoints.value > housePoints.value){
+                    setResultText('YOU WIN!');
+                    setWin(win + 1);
+                    setMoney(money + (bet * 2));
+                    setBet(0);
+                } else if (playerPoints.value === housePoints.value) {
+                    setResultText('DRAW');
+                    setDraw(draw + 1);
+                    setMoney(money + bet);
+                    setBet(0);
+                } else if (playerPoints.value < housePoints.value) {
+                    setResultText('YOU LOSE');
+                    setLoss(loss + 1);
+                    setBet(0);
+                }
+            } else {
+                score()
             }
-        score()
+
+           
         deckStatus()
     }
 
